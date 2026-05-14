@@ -6,11 +6,17 @@ export const CounterProvider = ({ children }) => {
   const [count, setCount] = useState(0);
 
   // Add increment & decrement Logic here
+  const increment = () => {
+    setCount(count => count + 1)
+  }
+  const decrement = () => {
+    setCount(count => count - 1)
+  }
 
   return (
     /* Should look like this */
     /* <CounterContext.Provider value={{ count, increment, decrement }}> */
-    <CounterContext.Provider value={{ count }}>
+    <CounterContext.Provider value={{ count, increment, decrement }}>
       {children}
     </CounterContext.Provider>
   );
